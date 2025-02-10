@@ -16,6 +16,8 @@ https://python-poetry.org/docs/#installing-with-the-official-installer
 
     make update
 
+Also add .env file in project file and add secret key
+
 * to run the server
 
     make run-server
