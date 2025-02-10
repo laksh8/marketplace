@@ -1,11 +1,21 @@
 Local Marketplace Ecosystem
 =====
 
-=For developers=
+**For developers**
 
-poetry installed
+* Install poetry
+https://python-poetry.org/docs/#installing-with-the-official-installer
 
-make sure to have make installed
+* Install make
 
-$ make update
-to set up the working env
+    choco install make
+
+----
+
+* to set up everything
+
+    make update
+
+* to run the server
+
+    make run-server
