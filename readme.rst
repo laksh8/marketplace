@@ -10,6 +10,8 @@ https://python-poetry.org/docs/#installing-with-the-official-installer
 
     choco install make
 
+add a .env file for secret key
+
 ----
 
 * to set up everything
