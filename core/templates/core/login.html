@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-4">Login</h1>
+<form method="POST" class="bg-white p-6 rounded shadow-md">
+    {% csrf_token %}
+    <label class="block mb-2">Username</label>
+    <input type="text" name="username" required class="border p-2 w-full mb-4">
+
+    <label class="block mb-2">Password</label>
+    <input type="password" name="password" required class="border p-2 w-full mb-4">
+
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Login</button>
+</form>
+<p class="mt-4">Don't have an account? <a href="{% url 'register' %}" class="text-blue-500">Register</a></p>
+{% endblock %}
