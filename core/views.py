@@ -59,14 +59,14 @@ def user_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('home')  # Redirect to home after login
+            return redirect('/')  # Redirect to home after login
     else:
         form = AuthenticationForm()
     return render(request, 'core/login.html', {'form': form})
 
 def user_logout(request):
     logout(request)
-    return redirect('home')  # Redirect to home after logout
+    return redirect('/')  # Redirect to home after logout
 
 
 class RegisterForm(forms.ModelForm):
@@ -97,3 +97,16 @@ def register(request):
     else:
         form = RegisterForm()
     return render(request, 'core/register.html', {'form': form})
+
+@login_required
+def add_to_wishlist(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    Wishlist.objects.get_or_create(user=request.user, product=product)
+    return redirect('wishlist')
+
+@login_required
+def wishlist(request):
+    wishlist_items = Wishlist.objects.filter(user=request.user)
+    return render(request, 'core/wishlist.html', {'wishlist_items': wishlist_items})
+
+
