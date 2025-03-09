@@ -6,7 +6,7 @@
 <ul>
     {% for item in user.wishlist.all %}
     <li class="p-4 bg-white shadow-md rounded mb-2">
-        <a href="{% url 'product_detail' item.product.id %}" class="text-lg">{{ item.product.title }}</a>
+        <a href="{% url 'core:product_detail' item.product.id %}" class="text-lg">{{ item.product.title }}</a>
     </li>
     {% endfor %}
 </ul>
