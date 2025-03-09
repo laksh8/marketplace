@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Cart{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-4">Your Cart</h1>
+{% if order.items.all %}
+<ul>
+    {% for item in order.items.all %}
+    <li class="p-4 bg-white shadow-md rounded mb-2 flex justify-between">
+        <span>{{ item.product.title }} (x{{ item.quantity }})</span>
+        <span>${{ item.price }}</span>
+    </li>
+    {% endfor %}
+</ul>
+<p class="mt-4 text-lg font-semibold">Total: ${{ order.total_price }}</p>
+<a href="{% url 'checkout' %}" class="bg-green-500 text-white px-4 py-2 rounded mt-4 inline-block">Proceed to
+    Checkout</a>
+{% else %}
+<p>Your cart is empty.</p>
+{% endif %}
+{% endblock %}

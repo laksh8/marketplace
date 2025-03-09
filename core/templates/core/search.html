@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Search Results{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-4">Search Results</h1>
+{% if results %}
+<ul>
+    {% for product in results %}
+    <li class="p-4 bg-white shadow-md rounded mb-2">
+        <a href="{% url 'product_detail' product.id %}" class="text-lg">{{ product.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No results found.</p>
+{% endif %}
+{% endblock %}

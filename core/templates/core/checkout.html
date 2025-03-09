@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Checkout{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-4">Checkout</h1>
+<form method="POST" class="bg-white p-6 rounded shadow-md">
+    {% csrf_token %}
+    <label class="block mb-2">Address Line 1</label>
+    <input type="text" name="address_line1" required class="border p-2 w-full mb-4">
+
+    <label class="block mb-2">City</label>
+    <input type="text" name="city" required class="border p-2 w-full mb-4">
+
+    <label class="block mb-2">State</label>
+    <input type="text" name="state" required class="border p-2 w-full mb-4">
+
+    <label class="block mb-2">Postal Code</label>
+    <input type="text" name="postal_code" required class="border p-2 w-full mb-4">
+
+    <label class="block mb-2">Country</label>
+    <input type="text" name="country" required class="border p-2 w-full mb-4">
+
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Place Order</button>
+</form>
+{% endblock %}

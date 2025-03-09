@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Wishlist{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-4">Your Wishlist</h1>
+{% if user.wishlist.all %}
+<ul>
+    {% for item in user.wishlist.all %}
+    <li class="p-4 bg-white shadow-md rounded mb-2">
+        <a href="{% url 'product_detail' item.product.id %}" class="text-lg">{{ item.product.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>Your wishlist is empty.</p>
+{% endif %}
+{% endblock %}
