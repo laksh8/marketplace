@@ -1,7 +1,33 @@
 {% extends "base.html" %}
-
 {% load static %}
 
-{% block content %}
+{% block title %}Become a Seller - Marketplace{% endblock %}
 
+{% block content %}
+<div class="max-w-2xl mx-auto px-6 py-12 text-gray-700 space-y-8">
+    <h2 class="text-center text-indigo-600">#takebackcontrol</h2>
+    <h1 class="text-4xl font-semibold text-indigo-600 brand-font mb-6 text-center">Become a Seller <span></span></h1>
+
+    <form method="post" class="space-y-6 bg-white p-6 rounded-2xl shadow-lg">
+        {% csrf_token %}
+        {% for field in form %}
+        <div>
+            <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-600 mb-1">
+                {{ field.label }}
+            </label>
+            {{ field }}
+            {% if field.errors %}
+            <p class="text-red-500 text-sm mt-1">{{ field.errors.as_text }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <div class="text-center">
+            <button type="submit"
+                class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-indigo-700 transition">
+                Submit Application
+            </button>
+        </div>
+    </form>
+</div>
 {% endblock %}

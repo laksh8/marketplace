@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Thank You for Joining Marketplace{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto px-6 py-12 text-gray-700 space-y-8">
+    <h1 class="text-4xl font-semibold text-indigo-600 brand-font mb-6 text-center">Thank You!</h1>
+
+    <p class="text-lg leading-relaxed text-center">
+        Your application to become a seller on <span class="font-semibold text-indigo-500">Marketplace</span> has been
+        received.
+        We’ll review your details and get back to you soon. Meanwhile, feel free to explore the platform or reach out to
+        us for any questions.
+    </p>
+
+    <div class="text-center mt-8">
+        <a href="/"
+            class="inline-block bg-indigo-600 text-white font-semibold px-8 py-3 rounded-full hover:bg-indigo-700 transition">
+            Back to Homepage
+        </a>
+    </div>
+</div>
+{% endblock %}
