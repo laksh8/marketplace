@@ -12,4 +12,7 @@ def business(request):
 def about(request):
     return render(request, 'about.html', {})
 
+def invest(request):
+    return render(request, 'invest.html', {})
+
 
