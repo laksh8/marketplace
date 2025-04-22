@@ -62,6 +62,30 @@
         {% endblock %}
     </main>
 
+    <!-- Footer -->
+    <footer class="bg-white shadow-inner mt-16">
+        <div
+            class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between text-gray-600 text-sm">
+
+            <!-- Company Branding -->
+            <div class="font-semibold tracking-wide text-indigo-600 brand-font text-xl mb-4 md:mb-0">
+                Marketplace
+            </div>
+
+            <!-- Footer Nav Links -->
+            <div class="flex space-x-6 mb-4 md:mb-0">
+                <a href="#" class="hover:text-indigo-600 transition">Privacy</a>
+                <a href="#" class="hover:text-indigo-600 transition">Terms</a>
+                <a href="#" class="hover:text-indigo-600 transition">Contact</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-xs text-gray-400 text-center md:text-right">
+                &copy; {{ now|date:"Y" }} Marketplace. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
