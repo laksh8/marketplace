@@ -10,11 +10,11 @@ def home(request):
 
 def business(request):
         if request.method == 'POST':
-            form = SellerForm(request.POST)
+            form = SellerForm(request.POST, request.FILES)
             if form.is_valid():
-                # You can save to DB or send email here
-                print(form.cleaned_data)  # replace with actual logic
-                return redirect('/thank-you')  # Make a thank you page
+                logo = form.cleaned_data['logo']
+                print(form.cleaned_data)  
+                return redirect('/thank-you') 
         else:
             form = SellerForm()
         
