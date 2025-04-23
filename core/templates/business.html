@@ -15,7 +15,7 @@
             <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-600 mb-1">
                 {{ field.label }}
             </label>
-            {{ field }}
+            <span class="border-2"> {{ field }}</span>
             {% if field.errors %}
             <p class="text-red-500 text-sm mt-1">{{ field.errors.as_text }}</p>
             {% endif %}
