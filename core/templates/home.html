@@ -24,9 +24,15 @@
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     {% for seller in sellers %}
     <div class="border p-4 rounded-lg shadow-lg">
-        <img src="" alt="{{ seller.name }}" class="w-full h-48 object-cover rounded">
+        <center> <img src="{{ seller.logo.url }}" alt="{{ seller.name }}"
+                class="w-32 h-32 object-contain {% if seller.under_verification %}grayscale{% endif %}"></center>
         <h2 class="text-xl font-semibold mt-2">{{ seller.name }}</h2>
         <p class="text-gray-700">{{ seller.description }}</p>
+        {% if seller.under_verification %}
+        <button class="px-4 py-2 mt-4 border-2 rounded-full bg-gray-100">Under Verification</button>
+        {% else %}
+        <button class="px-4 py-2 mt-4 border-2 rounded-full bg-indigo-600 text-white w-max">Enter Store</button>
+        {% endif %}
     </div>
     {% endfor %}
 </div>

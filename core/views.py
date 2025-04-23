@@ -12,8 +12,7 @@ def business(request):
         if request.method == 'POST':
             form = SellerForm(request.POST, request.FILES)
             if form.is_valid():
-                logo = form.cleaned_data['logo']
-                print(form.cleaned_data)  
+                form.save()
                 return redirect('/thank-you') 
         else:
             form = SellerForm()
