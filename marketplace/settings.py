@@ -72,7 +72,13 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = 'core.CustomUser'
+
 WSGI_APPLICATION = 'marketplace.wsgi.application'
+
+LOGIN_URL = '/login/'  # or use: LOGIN_URL = 'login' if using name-based URLs
+LOGIN_REDIRECT_URL = '/'  # where to go after login
+LOGOUT_REDIRECT_URL = '/login/'     # where to go after logout
 
 
 # Database
