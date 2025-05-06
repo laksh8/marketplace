@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
-from decouple import config
 
 
 
@@ -24,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('DJANGO_SECRET_KEY')
+SECRET_KEY = 'uZphu6hA7aGWQ793mLLq2jraOrwc0R6Rnh_hVk4lXIR1e_UnDZuiegMQFYMw2w6gnq0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,6 +79,8 @@ LOGIN_URL = '/login/'  # or use: LOGIN_URL = 'login' if using name-based URLs
 LOGIN_REDIRECT_URL = '/'  # where to go after login
 LOGOUT_REDIRECT_URL = '/login/'     # where to go after logout
 
+JWT_SECRET = 'super-secret-key'
+JWT_ALGORITHM = 'HS256'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases

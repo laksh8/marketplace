@@ -1,0 +1,31 @@
+<!-- profile.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <div class="flex items-center mb-8">
+        <!-- Profile Picture (First letter of name) -->
+        <div
+            class="w-24 h-24 bg-blue-500 text-white flex items-center justify-center rounded-full text-3xl font-bold mr-6">
+            {{ user.name|slice:":1" }}
+        </div>
+        <!-- Profile Info -->
+        <div>
+            <h2 class="text-3xl font-semibold text-gray-800">{{ user.username }}</h2>
+            <p class="text-lg text-gray-600">{{ user.email }}</p>
+        </div>
+    </div>
+
+    <!-- Past History Section -->
+    <div class="mt-6">
+        <h3 class="text-2xl font-semibold text-gray-700">Past History</h3>
+        <p class="text-gray-500 mt-2">No past history</p>
+    </div>
+    <br>
+    <div>
+        <a href="/logout">
+            <button class="px-4 bg-red-600 text-white py-2 rounded hover:bg-red-700">Logout</button>
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -11,13 +11,11 @@ class Seller(models.Model):
     description = models.TextField()
     logo = models.ImageField(upload_to='logos/')
     under_verification = models.BooleanField(default=True)
-
+    url = models.CharField(max_length=100)
     def __str__(self):
             return f"{self.name}"
 
 class CustomUser(AbstractUser):
     # Force role to always be 'buyer'
     def save(self, *args, **kwargs):
-        self.is_staff = False
-        self.is_superuser = False
         super().save(*args, **kwargs)
